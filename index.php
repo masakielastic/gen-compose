@@ -19,8 +19,3 @@ function compose(array $middleware)
         yield $next;
     };
 }
-
-
-
-
-
