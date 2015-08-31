@@ -47,3 +47,8 @@ $app->run($middleware);
 var_dump('321' === $app->body);
 ```
 
+ライセンス
+---------
+
+MIT
+
