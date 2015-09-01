@@ -14,15 +14,11 @@ class Application
 
     function run(array $middleware)
     {
-        foreach ($middleware as &$m) {
-            $m = $m->bindTo($this);
-        }
-
         $noop = function () {
             yield;
         };
 
-        $all = compose($middleware);
+        $all = compose($middleware, $this);
         $all($noop)->next();
     }
 }
@@ -51,4 +47,3 @@ var_dump('321' === $app->body);
 ---------
 
 MIT
-
